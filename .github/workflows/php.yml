@@ -33,6 +33,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
+    - name: Allow composer-installer plugin
+      run: composer config allow-plugins.getkirby/composer-installer true
+
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
